@@ -19,11 +19,11 @@ public class MyRestController {
 	
 	@RequestMapping("/name")
 	@PreAuthorize("hasRole('ROLE_write')")
-	public Principal getMyName(Principal user){
+	public String getMyName(){
 		
 		System.out.println("inside getMyName>>>>" + SecurityContextHolder.getContext().getAuthentication().getName());
 		System.out.println("Authorities="+ SecurityContextHolder.getContext().getAuthentication().getAuthorities());
-		return user;
+		return "Rest Service called successfully which has ROLE_write";
 	}
 
 }
