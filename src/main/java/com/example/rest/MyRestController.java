@@ -21,5 +21,12 @@ public class MyRestController {
 		System.out.println("Authorities="+ SecurityContextHolder.getContext().getAuthentication().getAuthorities());
 		return "Rest Service called successfully which has ROLE_write";
 	}
-
+	
+	//ROLE_resource-server-read
+	@RequestMapping(value="/nameexternal", produces="application/json")
+	@PreAuthorize("hasRole('ROLE_resource-server-read')")
+	public String getMyExternalName(){
+		
+		return "Rest Service called successfully which has ROLE_resource-server-read";
+	}
 }
