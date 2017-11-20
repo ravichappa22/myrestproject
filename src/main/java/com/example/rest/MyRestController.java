@@ -29,4 +29,10 @@ public class MyRestController {
 		
 		return "Rest Service called successfully which has ROLE_resource-server-read";
 	}
+	
+	@RequestMapping(value="/nameinternal", produces="application/json")
+	public String getMyInternalName(){
+		
+		return "Rest Service called successfully which has ROLE_write";
+	}
 }
